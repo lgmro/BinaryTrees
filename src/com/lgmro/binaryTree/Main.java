@@ -13,5 +13,15 @@ public class Main {
         System.out.println(tree.length());
         tree.findValue(4);
         tree.findValue(12);
+
+        System.out.println("Traversing the tree with inOrder operation: ");
+        tree.inOrder();
+
+        System.out.println("Traversing the tree with preOrder operation: ");
+        tree.preOrder();
+
+        System.out.println("Traversing the tree with postOrder operation: ");
+        tree.postOrder();
+
     }
 }

@@ -18,6 +18,18 @@ public class BinaryTreeSearch {
         findValue(value, this.root);
     }
 
+    public void inOrder() {
+        inOrder(this.root);
+    }
+
+    public void preOrder() {
+        preOrder(this.root);
+    }
+
+    public void postOrder() {
+        postOrder(this.root);
+    }
+
     public int length() {
         return this.size;
     }
@@ -45,7 +57,7 @@ public class BinaryTreeSearch {
         }
         
         if (node.info == value) {
-            System.out.println("Value founded." + node.info);
+            System.out.println("Value " + node.info + " founded.");
             return;
         }
         
@@ -53,6 +65,30 @@ public class BinaryTreeSearch {
             findValue(value, node.leftChild);
         } else {
             findValue(value, node.rightChild);
+        }
+    }
+
+    private void inOrder(Node node) {
+        if (node != null) {
+            inOrder(node.leftChild);
+            System.out.println("Visit: " + node.info);
+            inOrder(node.rightChild);
+        }
+    }
+
+    private void preOrder(Node node) {
+        if (node != null) {
+            System.out.println("Visit: " + node.info);
+            preOrder(node.leftChild);
+            preOrder(node.rightChild);
+        }
+    }
+
+    private void postOrder(Node node) {
+        if (node != null) {
+            postOrder(node.leftChild);
+            postOrder(node.rightChild);
+            System.out.println("Visit: " + node.info);
         }
     }
 }
