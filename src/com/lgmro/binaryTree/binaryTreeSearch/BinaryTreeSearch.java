@@ -30,6 +30,14 @@ public class BinaryTreeSearch {
         postOrder(this.root);
     }
 
+    public int minimum() {
+        return  minimum(this.root).info;
+    }
+
+    public int maximum() {
+        return  maximum(this.root).info;
+    }
+
     public int length() {
         return this.size;
     }
@@ -90,5 +98,27 @@ public class BinaryTreeSearch {
             postOrder(node.rightChild);
             System.out.println("Visit: " + node.info);
         }
+    }
+
+    private Node minimum(Node node) {
+        Node last;
+        if (node.leftChild == null) {
+            return node;
+        }
+
+        last = minimum(node.leftChild);
+
+        return last;
+    }
+
+    private Node maximum(Node node) {
+        Node last;
+        if (node.rightChild == null) {
+            return node;
+        }
+
+        last = maximum(node.rightChild);
+
+        return last;
     }
 }

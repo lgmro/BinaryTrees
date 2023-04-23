@@ -23,5 +23,8 @@ public class Main {
         System.out.println("Traversing the tree with postOrder operation: ");
         tree.postOrder();
 
+        System.out.println("Minimum value: " + tree.minimum());
+        System.out.println("Maximum value: " + tree.maximum());
+
     }
 }
